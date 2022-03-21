@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>FaceAnalysisAplication</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/resultssheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script type='text/javascript' src='../static/js/script.js'></script>
+</head>
+    <body>
+        <header id ="header" class="wrapeer">
+            <h1 class = "site-title">
+                <span class = "ja"><a href="/">顔分析アプリ</a></span>
+                <span class = "en"><a href="/">face analysis aplication</a></span>
+            </h1>
+        </header>
+        <main>
+            <!-- resultsvisual -->
+            <div id = "results">
+                <div class = "results-title">
+                    <span class = "ja">分析結果</span>
+                    <span class = "en">results</span>
+                </div>
+                <div class = "img">
+                    <img src = "{{base_savepath}}" alt = "results_img"> 
+                </div>
+            </div>
+            <!-- contents -->
+            <div id = "contents" class = "wrapper">
+                <ul class = "block-grid">
+                    {%- for items in df %}
+                        <li>
+                            <div class = "inner">
+                                <div class = "face-trim">
+                                    <img src = "{{ items[25] }}" alt="face_visual">
+                                    <dl class = "text">
+                                        <dt>性別</dt>
+                                        <dd>{{ items[0] }}</dd>
+                                        <dt>年齢</dt>
+                                        <dd>{{ items[1] }}歳</dd>
+                                        <dt>笑顔</dt>
+                                        <dd>{{ items[2] }}%</dd>
+                                        <dt>眼鏡</dt>
+                                        <dd>{{ items[3] }}</dd>
+                                        <dt>信頼性</dt>
+                                        <dd>{{ items[4] }}</dd>
+                                        <dt>髭</dt>
+                                        <dd>{{ items[5] }}%</dd>
+                                        <dt>アイメイク</dt>
+                                        <dd>{{ items[6] }}</dd>
+                                        <dt>リップメイク</dt>
+                                        <dd>{{ items[7] }}</dd>
+                                        <dt>マスク</dt>
+                                        <dd>{{ items[8] }}</dd>
+                                        <dt>帽子</dt>
+                                        <dd>{{ items[9] }}</dd>
+                                    </dl>
+                                </div>
+                                <!-- 1つ目のグラフ -->
+                                <div class = "graph">
+                                    {% set str1 = 'graphface-' ~ loop.index %}
+                                    <canvas id="{{str1}}"></canvas>
+                                    <script>
+                                        displayChart_face("{{str1}}","{{items[10]}}","{{items[11]}}","{{items[12]}}","{{items[13]}}","{{items[14]}}","{{items[15]}}","{{items[16]}}","{{items[17]}}");
+                                    </script>
+                                </div>
+                                <!-- 2つ目のグラフ -->
+                                <div class = "graph">
+                                    {% set str2 = 'graphhair-' ~ loop.index %}
+                                    <canvas id="{{str2}}"></canvas>
+                                    <script>
+                                        displayChart_hair("{{str2}}","{{items[18]}}","{{items[19]}}","{{items[20]}}","{{items[21]}}","{{items[22]}}","{{items[23]}}","{{items[24]}}");
+                                    </script>
+                                </div>
+                            </div>
+                        </li>
+                    {%- endfor %}
+                </ul>
+            </div>
+        </main>
+    </body>
+</html>

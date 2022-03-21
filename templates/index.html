@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>FaceAnalysisAplication</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/stylesheet.css">
+</head>
+    <body>
+        <header id ="header" class="wrapeer">
+            <h1 class = "site-title">
+                <span class = "ja"><a href="/">顔分析アプリ</a></span>
+                <span class = "en"><a href="/">face analysis aplication</a></span>
+            </h1>
+        </header>
+        <main>
+            <!-- mainvisual -->
+            <div id = "mainvisual">
+                <img src = "../static/img/mainvisual.jpg" alt = "imagepicture">
+            </div>
+            <!-- section -->
+            <div id = "section" class="wrapper">
+                <!-- about -->
+                <div class = "about">
+                    <h2 class = "section-title">
+                        <span class = "ja">About</span>
+                        <span class = "en">このサイトについて</span>
+                    </h2>
+                    <p>AIが写真内の人の年齢・性別を分析します</p>
+                    <p>ファイルサイズは3Mバイト以下です</p>
+                    <p>複数人が映っている写真は処理に時間がかかります</p>
+                    <p>拡張子(png/jpg/jpeg/gif)でアップロードしてください</p>
+                    <p>画像が荒い写真では顔が検出されない場合があります</p>
+                </div>
+                <!-- upload -->
+                <div class = "upload">
+                    <h2 class = "section-title">
+                        <span class = "ja">Execution</span>
+                        <span class = "en">動作させる</span>
+                    </h2>
+                    <p>画像ファイルを選択してください</p>
+                    <form method="POST" enctype="multipart/form-data">
+                        <input class="file_choose" type="file" name="file">
+                        <input class="button" type="submit" value="分析開始">
+                    </form>
+                    {% if answer %}
+                        <p class="nothing">{{answer}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <p>&copy; 2022 3/9 My Aplication</p>
+        </footer>
+    </body>
+</html>
