@@ -17,7 +17,8 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 # APIkeyの取得
 def get_api_key():
-    with open('./static/json/secret.json') as f:
+    api_path = os.path.join("./static/json","secret.json")
+    with open(api_path) as f:
         secret_json = json.load(f)
         FaceApiKey = secret_json['SUBSCRIPTION_KEY']
         Endpoint = secret_json['ENDPOINT']
