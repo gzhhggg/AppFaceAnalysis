@@ -67,9 +67,14 @@ def preprocessing_img(results,filepath):
         w = d["faceRectangle.width"]
         h = d["faceRectangle.height"]
         center_x , center_y = (x + w/2),(y + h/2)
+
         x_start = center_x - w
+        if x_start < 0:
+            x_start = 0
         x_end = x_start + w * 2
         y_start = center_y - h
+        if y_start < 0:
+            y_start = 0
         y_end = y_start + h * 2
         face_cut = img[int(y_start):int(y_end), int(x_start):int(x_end)]
         # 角度の修正
