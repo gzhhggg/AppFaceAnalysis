@@ -156,6 +156,10 @@ def upload_file():
             filepath = secure_filename(file.filename)
             file.save(os.path.join(SAVE_FOLDER, filepath))
             filepath = os.path.join(SAVE_FOLDER, filepath)
+            file_size = os.path.getsize(filepath)
+            if file_size > 4000000:
+                answer = "ファイルサイズが4MBを超えています"
+                return render_template("index.html",answer = answer)
             # ここから前処理
             results = search_face(filepath)
             if results ==[]:
