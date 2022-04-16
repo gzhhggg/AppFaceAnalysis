@@ -44,3 +44,9 @@ Python ライブラリ
 クラウドサービス    
 * Heroku  
 
+# Point    
+検出された顔はトリミングされ角度を修正している  
+<img src="https://user-images.githubusercontent.com/93046615/163683090-b3283615-547a-4ac8-b5ad-b45930abfc7a.png" width="300px">
+<img src="https://user-images.githubusercontent.com/93046615/163683076-83ef31eb-ee53-4c14-9ba3-52aeda9af27a.png" width="300px">  
+Azure FaceAPIで取得できる髪色値を元にChart.jsにでグラフを表示している  
+<img src="https://user-images.githubusercontent.com/93046615/163683189-0e6befa5-0f1c-495e-a2c0-9efa3a5ee4bf.png" width="300px">  
