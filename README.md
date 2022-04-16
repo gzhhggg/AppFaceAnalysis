@@ -50,3 +50,20 @@ Python ライブラリ
 <img src="https://user-images.githubusercontent.com/93046615/163683076-83ef31eb-ee53-4c14-9ba3-52aeda9af27a.png" width="300px">  
 Azure FaceAPIで取得できる髪色値を元にChart.jsにでグラフを表示している  
 <img src="https://user-images.githubusercontent.com/93046615/163683189-0e6befa5-0f1c-495e-a2c0-9efa3a5ee4bf.png" width="300px">  
+
+
+構成イメージ  
+<img src="https://user-images.githubusercontent.com/93046615/163683449-6926ccad-688d-4a08-b532-04a672a1bcb6.png" width="800px">
+ 
+# Note
+ 
+AWSで実装を検討中
+ 
+# Author
+
+* 作成者 KeiichiAdachi
+* 所属 Japan/Aichi
+* E-mail keiichimonoo@gmail.com
+ 
+# License
+なし  
